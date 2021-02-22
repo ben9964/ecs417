@@ -1,0 +1,9 @@
+@import url('exercise2_s3.css');
+
+#cool, .shiny {
+  background-color: silver;
+}
+
+a:hover {
+  background-color: silver;
+}

@@ -1,0 +1,11 @@
+@media print{
+	
+	p, ul {
+	  background-color: green;
+	  font-size: 24pt;
+	}
+
+	ul a {
+	  color: orange;
+	}
+}
