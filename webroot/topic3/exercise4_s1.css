@@ -1,38 +1,46 @@
+/* general whole page styles first, e.g. whole page background and text align */
+
 html{
 	background-color: rgb(51, 204, 204);
 	text-align: center;
 }
 
-body {
+/* margin for main body so that it's centered on the page too */
+
+body{
 	margin-left: 25%;
 	margin-right: 25%;
 }
 
-header {
+/* header and footer styles for bg color and text color */
+
+header, footer{
 	background-color: maroon;
 	color: aqua;
 }
 
-
+/* set font thickness for all h1 and h2 elements*/
 
 h1, h2{
 	font-weight: 900;
 }
 
+/* set font and size for h1 and h2 elements seperately */
+
 h1{
 	font-family: arial;
-	font-size: 27pt;
+	font-size: 350%;
 }
 
 h2{
 	font-family: times-new-roman;
-	font-size: 22pt;
+	font-size: 200%;
 }
 
-
+/* paragraph styles including an italic id that can be added to p elements to make them italic */
 
 p, li{
-	font-size: 14pt;
+	font-size: 125%;
 	font-family: calibri;
 }
 
@@ -40,38 +48,40 @@ p#italic{
 	font-style: italic;
 }
 
+/* nav bar styles such as link colors and background */
 
-
-nav {
+nav{
 	background-color: rgb(204, 153, 255);
 	margin-bottom: 3%;
 }
 
 nav a{
 	color: rgb(0, 51, 0);
-	font-size: 15pt;
+	font-size: 120%;
 	padding-right: 1%;
 }
 
-
+/* different link colors depending on where they are */
 
 section a{
-	font-size: 16pt;
+	font-size: 120%;
 	color: rgb(255, 102, 255);
 	font-weight: bold;
 }
 
 footer a{
-	font-size: 18pt;
+	font-size: 126%;
 	color: rgb(204, 204, 255);
 	font-weight: bold;
 }
+
+/* red hover */
 
 a:hover{
 	color: red;
 }
 
-
+/* set all articles and sections to have spacing */
 
 article{
 	background-color: white;
@@ -82,18 +92,15 @@ section{
 	margin-bottom: 2%;
 }
 
+/* set figure bg color, border based on image size of 200px margins auto to center*/
+
 figure{
 	background-color: greenyellow;
 	border-style: solid;
-	border-width: 10px;
+	border-width: 5px;
 	border-color: red red green red;
 	display: block;
 	width: 200px; 
 	margin-left: auto;
 	margin-right: auto;
-}
-
-footer{
-	color: aqua;
-	background-color: maroon;
 }
