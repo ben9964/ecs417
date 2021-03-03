@@ -1,0 +1,28 @@
+html {
+	font-family: arial;
+}
+
+caption {
+	background-color: teal;
+	font-weight: bold;
+	font-size: 1.3em;
+}
+
+table {
+	border: solid 0.1em teal;
+	border-spacing: 0.1em;
+}
+
+th {
+	font-weight: bold;
+	vertical-align: middle;
+}
+
+td, th {
+	border: solid 0.1em gray;
+	padding: 0.1em;
+}
+
+thead, tfoot {
+	background-color: lightgray;
+}

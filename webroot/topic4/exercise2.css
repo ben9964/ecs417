@@ -1,0 +1,40 @@
+html {
+	font-family: arial;
+}
+
+caption {
+	background-color: maroon;
+	color: white;
+	font-weight: bold;
+	font-size: 1.3em;
+	margin-bottom: 1%;
+}
+
+table {
+	border: solid 0.1em teal;
+	border-spacing: 0.1em;
+}
+
+table table {
+	padding: 0.8em;
+}
+
+img {
+	width: 10em;
+	height: 15em;
+	border-radius: 1em;
+}
+
+th {
+	font-weight: bold;
+}
+
+td, th {
+	vertical-align: middle;
+	border: solid 0.1em gray;
+	padding: 0.1em;
+}
+
+thead, tfoot {
+	background-color: lightgray;
+}

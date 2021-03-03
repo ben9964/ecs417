@@ -1,0 +1,42 @@
+html {
+	margin-left: 20%;
+	margin-right: 20%;
+}
+
+legend {
+	font-size: 3em;
+	background-color: green;
+	color: white;
+	width: auto;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+fieldset {
+	background-color: rgb(234, 254, 219);
+}
+
+article {
+	border: solid 1pt;
+	border-color: green;
+	padding: 5pt;
+	margin-bottom: 0.5em;
+}
+
+article.white {
+	background-color: white;
+	border: none;
+}
+
+article section {
+	margin-left: 20%;
+}
+
+.button {
+	background-color: green;
+	color: white;
+	border-radius: 0.5em;
+	border: none;
+	padding: 0.6em 1em;
+	margin-left: 1em;
+}
