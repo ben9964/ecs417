@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!-- topic 2 excersise -->
+<html lang="en">
+	<head>
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" type="text/css" href="reset.css"/>
+		<link rel="stylesheet" type="text/css" href="blog.css"/>
+		<link rel="stylesheet" type="text/css" href="global.css"/>
+        <title>Ben Masters ~ Portfolio</title>
+		<link rel="icon" href="https://i.gyazo.com/69f5cd9ae63825e2fe17dbb3671189da.png">
+    </head>
+	
+    <body cz-shortcut-listen="true">
+	
+	<div class="nav">
+		<header>
+			<h1>Ben Masters</h1>
+		</header>
+	
+		<nav>
+			<a href="home.html#about">About myself</a>
+			<a href="home.html#experience">Experience</a>
+			<a href="home.html#education">Education</a>
+			<a href="home.html#skills">Skills</a>
+			<a href="home.html#portfolio">Portfolio</a>
+			<a href="blog.html">Blog</a>
+			<a href="login.html">Login</a>
+		</nav>
+	</div>
+<form method="POST" action="">
+			<fieldset>
+				<legend>New Blog Post</legend>
+				<article>
+					<p>
+						<label>First Name</label> <br>
+						<input type="text" name="fname" placeholder="Your first name" required>
+					</p>
+					<p>
+						<label>Last Name</label> <br>
+						<input type="text" name="lname" placeholder="Your last name" required>
+					</p>
+					<p>
+						<label>Email Address</label> <br>
+						<input type="email" name="email" placeholder="Your email address">
+					</p>
+					<p>
+						<label>Telephone Number</label> <br>
+						<input type="tel" name="tel" pattern="[0-9]{2}-[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Your Phone No.">Example: 44-207-882-1234
+					</p>
+				</article>
+				<article>
+					<p>
+						<label>Blog Post Title</label> <br>
+						<input type="text" name="title" placeholder="Subject"required>
+					</p>
+					<p>
+						<label>Post Content</label> <br>
+						<textarea type="text" name="blogpost" placeholder="Your blog post here" rows="10" cols="200" required></textarea>
+					</p>
+					<p>
+						<label>Date</label> <br>
+						<input type="date">
+					</p>
+				</article>
+				<article class="white">
+					<p>
+						<label>Please Keep me informed about blog posts</label>
+						<input type="checkbox" name="accept"> <br>
+						<br>
+						<section>
+							<input type="submit" value="Submit" class="button">
+							<input type="reset" value="Clear Form" class="button">
+						</section>
+					</p>
+				</article>
+			</fieldset>
+		</form>
+	<footer>
+		<p>Go to <a href="#top">top</a></p>
+		<p id="italic">Contact Me: 64bmasters@gmail.com</p>
+	</footer>
+	
+	</body>
+</html>

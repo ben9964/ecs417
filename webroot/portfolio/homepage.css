@@ -1,0 +1,234 @@
+html{
+	scroll-behavior: smooth;
+	scroll-padding: 15em;
+}
+
+div.nav{
+	position: fixed;
+	top: 0;
+	z-index: 1;
+	width: 100%;
+}
+
+h2 hr{
+	width:1.2em;
+	text-align: left;
+	margin-left:0;
+}
+
+section h2{
+	font-size: 1.8em;
+	padding-bottom: 3%;
+}
+
+section h3{
+	font-size: 1.4em;
+	padding-bottom: 3%;
+}
+
+figcaption{
+	color:aqua;
+}
+
+article{
+	margin-left: 3em;
+	margin-right: 3em;
+	padding-bottom: 10em;
+}
+
+article.welcome{
+	margin-top: 10em;
+}
+
+article.welcome section {
+	padding-bottom: 15em;
+	background-color: lightgray;
+	margin-top: 2em;
+    margin-bottom: 2em;
+    margin-right: 3em;
+    margin-left: 3em;
+	border-radius: 2em;
+}
+
+article.welcome h2 {
+	font-size: 2em;
+	color:red;
+	margin-left: 40%;
+}
+
+article.welcome li{
+	list-style-type:none;
+	margin-left: 40%;
+}
+
+article.about section.pfp{
+	float: left;
+	position: absolute;
+	
+}
+
+section.pfp img{
+	border-radius: 1.5em;
+}
+
+article.about section.aboutText{
+	margin-left: 20%;
+	background-color:#ff9966;
+	border-radius: 1.2em;
+	padding-bottom: 1em;
+}
+
+article.experience{
+	background-color: white;
+	color:black;
+	border-radius: 1.5em;
+}
+
+article.experience section {
+	margin-top: 2em;
+    margin-bottom: 2em;
+    margin-right: 3em;
+    margin-left: 3em;
+}
+
+article.experience table{
+	border: solid 0.1em red;
+}
+
+article.experience caption {
+	background-color: teal;
+	font-weight: bold;
+	font-size: 1.3em;
+}
+
+article.experience thead{
+	border: solid 0.1em red;
+	background-color: gray;
+}
+
+article.experience tbody{
+	border: solid 0.1em red;
+	vertical-align: middle;
+}
+
+article.experience td{
+	border: solid 0.1em black;
+	vertical-align: middle;
+}
+
+article.experience th{
+	border: solid 0.1em black;
+	vertical-align: middle;
+}
+
+article.education{
+	background-color: white;
+	color: black;
+	border-radius: 1.5em;
+}
+
+article.education section {
+	margin-top: 2em;
+    margin-bottom: 2em;
+    margin-right: 3em;
+    margin-left: 3em;
+}
+
+article.education td, article.education th{
+	padding-left: 5em;
+	padding-top: 1em;
+}
+
+article.skills{
+	background-color: white;
+	color:black;
+	border-radius: 1.5em;
+}
+
+article.skills section {
+	margin-top: 2em;
+    margin-bottom: 2em;
+    margin-right: 3em;
+    margin-left: 3em;
+}
+
+article.skills table{
+	border: 0.1em solid black;
+	border-collapse: collapse;
+}
+
+article.skills th{
+	border: 0.1em solid black;
+	border-collapse: collapse;
+	padding: 2.5em;
+}
+
+article.skills td{
+	border: 0.1em solid black;
+	border-collapse: collapse;
+	padding: 2em;
+}
+
+article.skills #gray{
+	background-color: #969696;
+}
+
+article.skills #head{
+	background-color: #ff99ff;
+}
+
+article.skills #red{
+	background-color: #ff5050;
+}
+
+article.skills #orange{
+	background-color: #ff9966;
+}
+
+article.skills #yellow{
+	background-color: #ffff99;
+}
+
+article.skills #green{
+	background-color: #99ff99;
+}
+
+article.projects section{
+	margin-top: 2em;
+    margin-bottom: 2em;
+    margin-right: 3em;
+    margin-left: 3em;
+}
+
+article.projects figure.startmenu{
+	float: left;
+	position: absolute;
+}
+
+article.projects .desc{
+	margin-left: 50%;
+}
+
+article.projects .under{
+	margin-top: 10em;
+	margin-left: 2%;
+}
+
+article.projects .left{
+	margin-left: 2%;
+}
+
+article.projects{
+	background-image: url('back.jpg');
+	border-radius: 1.5em;
+}
+
+footer a{
+	font-weight: bold;
+	color: #ccff66;
+	font-size: 1.6em;
+}
+
+footer a:hover{
+	color: red;
+}

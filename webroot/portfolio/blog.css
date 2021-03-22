@@ -1,0 +1,37 @@
+form{
+	color: rgb(159,160,195);
+	margin-top: 10%;
+    margin-bottom: 10%;
+    margin-right: 30%;
+    margin-left: 30%;
+}
+
+fieldset{
+	width: 5em;
+}
+
+legend {
+	font-size: 3em;
+	background-color: rgb(235,94,40);
+	color: white;
+	width: auto;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+article {
+	background-color: rgb(11,60,73);
+	border: solid 1pt;
+	border-color: rgb(174,217,224);;
+	padding: 1em;
+	margin-bottom: 2em;
+}
+
+.button {
+	background-color: rgb(135,0,23);;
+	color: white;
+	border-radius: 0.5em;
+	border: none;
+	padding: 0.6em 1em;
+	margin-left: 1em;
+}
