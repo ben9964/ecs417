@@ -9,26 +9,27 @@
 		<link rel="stylesheet" type="text/css" href="global.css"/>
         <title>Ben Masters ~ Portfolio</title>
 		<link rel="icon" href="https://i.gyazo.com/69f5cd9ae63825e2fe17dbb3671189da.png">
+		<script src="scripts.js"></script>
     </head>
 	
     <body cz-shortcut-listen="true">
 	
-	<div class="nav">
-		<header>
-			<h1>Ben Masters</h1>
-		</header>
-	
-		<nav>
-			<a href="home.html#about">About myself</a>
-			<a href="home.html#experience">Experience</a>
-			<a href="home.html#education">Education</a>
-			<a href="home.html#skills">Skills</a>
-			<a href="home.html#portfolio">Portfolio</a>
-			<a href="blog.html">Blog</a>
-			<a href="login.html">Login</a>
-		</nav>
-	</div>
-<form method="POST" action="">
+		<div class="nav">
+			<header>
+				<h1>Ben Masters</h1>
+			</header>
+		
+			<nav>
+				<a href="home.html#about">About myself</a>
+				<a href="home.html#experience">Experience</a>
+				<a href="home.html#education">Education</a>
+				<a href="home.html#skills">Skills</a>
+				<a href="home.html#portfolio">Portfolio</a>
+				<a href="blog.html">Blog</a>
+				<a href="login.html">Login</a>
+			</nav>
+		</div>
+		<form name="blog" method="POST" action="" onsubmit="return preventDefault()">
 			<fieldset>
 				<legend>New Blog Post</legend>
 				<article>
@@ -52,11 +53,11 @@
 				<article>
 					<p>
 						<label>Blog Post Title</label> <br>
-						<input type="text" name="title" placeholder="Subject"required>
+						<input type="text" name="title" placeholder="Subject" id="title">
 					</p>
 					<p>
 						<label>Post Content</label> <br>
-						<textarea type="text" name="blogpost" placeholder="Your blog post here" rows="10" cols="200" required></textarea>
+						<textarea type="text" name="blogpost" placeholder="Your blog post here" rows="10" cols="200" id="post"></textarea>
 					</p>
 					<p>
 						<label>Date</label> <br>
@@ -69,17 +70,17 @@
 						<input type="checkbox" name="accept"> <br>
 						<br>
 						<section>
-							<input type="submit" value="Submit" class="button">
-							<input type="reset" value="Clear Form" class="button">
+							<input type="submit" value="Submit" class="button" id="submitButton">
+							<input type="reset" value="Clear Form" class="button" onClick="areYouSure()">
 						</section>
 					</p>
 				</article>
 			</fieldset>
 		</form>
-	<footer>
-		<p>Go to <a href="#top">top</a></p>
-		<p id="italic">Contact Me: 64bmasters@gmail.com</p>
-	</footer>
+		<footer>
+			<p>Go to <a href="#top">top</a></p>
+			<p id="italic">Contact Me: 64bmasters@gmail.com</p>
+		</footer>
 	
 	</body>
 </html>
