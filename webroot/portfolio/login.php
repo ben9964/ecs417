@@ -11,8 +11,6 @@
      die("Connection failed: " . $conn->connect_error);
     }
 
-    echo "connected ";
-
     $user = $_GET["user"];
     $password = $_GET["pass"];
     
@@ -21,9 +19,9 @@
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0){
-            echo "hi";
+            echo "login now";
         }else {
-            echo "Error: " . $sql . "<br>" . $conn->error;
+            echo "user doesnt exist ";
         }
         $conn->close();
     }
