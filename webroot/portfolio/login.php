@@ -11,6 +11,8 @@
      die("Connection failed: " . $conn->connect_error);
     }
 
+    echo "Error: "
+
     $user = $_GET["user"];
     $password = $_GET["pass"];
     
