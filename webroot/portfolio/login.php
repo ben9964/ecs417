@@ -11,5 +11,18 @@
      die("Connection failed: " . $conn->connect_error);
     }
 
+    $user = $_GET["user"];
+    $password = $_GET["pass"];
     
+    if ($_SERVER['REQUEST_METHOD'] == 'GET'){
+        $sql = "SELECT * FROM USERS WHERE email = '$user' AND password = '$password'"
+
+        if ($conn->query($sql) === TRUE){
+
+        }else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+        }
+        $conn->close();
+    }
+
 ?>
