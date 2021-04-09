@@ -28,8 +28,7 @@
 
         if ($result->num_rows > 0){
             $_SESSION['user'] = $user;
-
-            echo "login now";
+            header("Location:home.html");
         }else {
             echo "Invalid username or password";
         }
