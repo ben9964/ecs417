@@ -22,7 +22,7 @@
     $user = $_GET["email"];
     $password = $_GET["pass"];
     
-    if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+    if ($_SERVER['REQUEST_METHOD'] == 'GET'){
         $sql = "SELECT * FROM USERS WHERE email = '$user' AND password = '$password'";
         $result = $conn->query($sql);
 
