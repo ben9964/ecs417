@@ -20,7 +20,7 @@
 
         $sql = "SELECT * FROM USERS WHERE email = '$username' and password = '$password'";  
         
-        print($conn->query($sql));
+        console.log($conn->query($sql));
     }
 
 
