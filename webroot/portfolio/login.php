@@ -1,4 +1,10 @@
+
+
 <?php
+    include 'ChromePhp.php'
+
+    ChromePhp::log("run")
+
     $dbhost = getenv("MYSQL_SERVICE_HOST");
     $dbport = getenv("MYSQL_SERVICE_PORT");
     $dbuser = getenv("DATABASE_USER");
@@ -10,6 +16,8 @@
     if ($conn->connect_error) {
      die("Connection failed: " . $conn->connect_error);
     }
+
+    
 
     $user = $_GET["user"];
     $password = $_GET["pass"];
