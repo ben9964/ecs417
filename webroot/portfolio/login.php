@@ -11,16 +11,17 @@
      die("Connection failed: " . $conn->connect_error);
     }
 
-    echo "Error: "
+    echo "connected "
 
     $user = $_GET["user"];
     $password = $_GET["pass"];
     
     if ($_SERVER['REQUEST_METHOD'] == 'GET'){
-        $sql = "SELECT * FROM USERS WHERE email = '$user' AND password = '$password'"
+        $sql = "SELECT * FROM USERS WHERE email = '$user' AND password = '$password'";
+        $result = $conn->query($sql);
 
-        if ($conn->query($sql) === TRUE){
-
+        if ($result->num_rows > 0){
+            echo "hi"
         }else {
             echo "Error: " . $sql . "<br>" . $conn->error;
         }
