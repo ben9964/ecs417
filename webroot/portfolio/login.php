@@ -13,7 +13,7 @@
      die("Connection failed: " . $conn->connect_error);
     }
 
-    $user = $_GET["user"];
+    $user = $_GET["email"];
     $password = $_GET["pass"];
     
     if ($_SERVER['REQUEST_METHOD'] == 'GET'){
