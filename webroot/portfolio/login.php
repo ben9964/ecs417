@@ -21,7 +21,7 @@
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0){
-            echo "hi"
+            echo "hi";
         }else {
             echo "Error: " . $sql . "<br>" . $conn->error;
         }
