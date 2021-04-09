@@ -1,9 +1,9 @@
 <?php
     
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST"){
-        $username = $_POST["email"];
-        $password = $_POST["pass"];
+    if ($_SERVER["REQUEST_METHOD"] == "GET"){
+        $username = $_GET["email"];
+        $password = $_GET["pass"];
 
 
         $dbhost = getenv("MYSQL_SERVICE_HOST");
