@@ -1,6 +1,12 @@
 
 
 <?php
+    session_start();
+
+    if (isset($_SESSION['user'])){
+        header("Location:home.html");
+    }
+
     $dbhost = getenv("MYSQL_SERVICE_HOST");
     $dbport = getenv("MYSQL_SERVICE_PORT");
     $dbuser = getenv("DATABASE_USER");
@@ -16,14 +22,16 @@
     $user = $_GET["email"];
     $password = $_GET["pass"];
     
-    if ($_SERVER['REQUEST_METHOD'] == 'GET'){
+    if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         $sql = "SELECT * FROM USERS WHERE email = '$user' AND password = '$password'";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0){
+            $_SESSION['user'] = $user;
+
             echo "login now";
         }else {
-            echo "user doesnt exist ";
+            echo "Invalid username or password";
         }
         $conn->close();
     }
