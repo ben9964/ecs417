@@ -30,7 +30,7 @@
             $_SESSION['user'] = $user;
             header("Location:home.html");
         }else {
-            echo "Invalid username or password";
+            echo "Invalid username or password" . $user . $password;
         }
         $conn->close();
     }
