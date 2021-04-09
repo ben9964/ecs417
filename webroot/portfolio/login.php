@@ -1,5 +1,5 @@
 <?php
-    
+    console.log("hi");
 
     if ($_SERVER["REQUEST_METHOD"] == "GET"){
         $username = $_GET["email"];
