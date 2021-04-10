@@ -46,7 +46,7 @@
                 $result = $conn->query($sql);
                 $row = mysqli_fetch_array($result);
 
-                while($row = mysql_fetch_assoc($result))
+                while($row = mysql_fetch_array($result))
                 {
                     echo $row['title']." <br><br>".$row['body'];
                     echo $row['date']." <br><br><br>";
