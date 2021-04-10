@@ -28,28 +28,31 @@
 				<a href="login.html">Login</a>
 			</nav>
 		</div>
+        <div class="blogposts">
+            <?php
+                $dbhost = getenv("MYSQL_SERVICE_HOST");
+                $dbport = getenv("MYSQL_SERVICE_PORT");
+                $dbuser = getenv("DATABASE_USER");
+                $dbpwd = getenv("DATABASE_PASSWORD");
+                $dbname = getenv("DATABASE_NAME");
+                // Creates connection
+                $conn = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
+                // Checks connection
+                if ($conn->connect_error) {
+                    die("Connection failed: " . $conn->connect_error);
+                }
 
-        <?php
-            $dbhost = getenv("MYSQL_SERVICE_HOST");
-            $dbport = getenv("MYSQL_SERVICE_PORT");
-            $dbuser = getenv("DATABASE_USER");
-            $dbpwd = getenv("DATABASE_PASSWORD");
-            $dbname = getenv("DATABASE_NAME");
-            // Creates connection
-            $conn = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
-            // Checks connection
-            if ($conn->connect_error) {
-                die("Connection failed: " . $conn->connect_error);
-            }
+                $sql = "SELECT * FROM BLOGPOSTS";
+                $result = $conn->query($sql);
+                $row = mysqli_fetch_array($result);
 
-            $sql = "SELECT * FROM BLOGPOSTS";
-            $result = $conn->query($sql);
-            $row = mysqli_fetch_array($result);
-
-            foreach ($row as $key => $value){
-                echo "$value";
-            }
-        ?>
+                while($row = mysql_fetch_assoc($result))
+                {
+                    echo $row['title']." <br><br>".$row['body'];
+                    echo $row['date']." <br><br><br>";
+                }
+            ?>
+        </div>
 
 		<footer>
 			<p>Go to <a href="#top">top</a></p>

@@ -21,7 +21,7 @@
         $sql = "INSERT INTO BLOGPOSTS (date, title, body) VALUES ('$date', '$title', '$body')";
         $result = $conn->query($sql);
         if ($result){
-            echo "posted to blog";
+            header("Location:viewblog.php");
         }else{
             echo "Error: " . $sql . "<br>" . $conn->error;
         }
