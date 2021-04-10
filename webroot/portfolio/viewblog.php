@@ -61,13 +61,13 @@
                 $sql = "SELECT * FROM BLOGPOSTS";
                 $result = $conn->query($sql);
                 
-                $arr = array();
+                $arr = mysqli_fetch_all($result);
 
-                while ($row = mysqli_fetch_array($result)){
-                    array_push($arr, $row);
-                }
+                // while ($row = mysqli_fetch_array($result)){
+                //     array_push($arr, $row);
+                // }
 
-                echo $arr;
+                print_r($arr);
 
                 function date_compare($element1, $element2) {
                     $datetime1 = strtotime($element1['date']);
