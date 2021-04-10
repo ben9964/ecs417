@@ -14,7 +14,7 @@
             die("Connection failed: " . $conn->connect_error);
         }
 
-        $date = $_POST["date"];
+        $date = date("Y-m-d H:i:s");
         $title = $_POST["title"];
         $body = $_POST["blogpost"];
     

@@ -8,6 +8,8 @@ article.post{
     background-color: cornflowerblue;
     color:rgb(0, 0, 0);
     border-radius: 1.5em;
+    margin-bottom: 7%;
+    text-align: center;
 }
 
 article.post h1{
