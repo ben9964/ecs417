@@ -36,9 +36,9 @@
 			<a href="blog.html">Blog</a>
 			<?php
 				if (isset($_SESSION['id'])){
-					echo <a href="logout.php">Logout</a>;
+					echo '<a href="logout.php">Logout</a>';
 				}else{
-					echo <a href="login.php">Login</a>;
+					echo '<a href="login.php">Login</a>';
 				}
 			?>
 		</nav>
