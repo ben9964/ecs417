@@ -1,5 +1,3 @@
-
-
 <?php
     session_start();
 
@@ -28,10 +26,9 @@
 
         if ($result->num_rows > 0){
             $_SESSION['user'] = $user;
-            header("Location:home.html");
+            echo "hi"
         }else {
-            echo $user;
-            echo $password;
+            echo "invalid login"
         }
         $conn->close();
     }
