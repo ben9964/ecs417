@@ -33,7 +33,13 @@
 			<a href="#education">Education</a>
 			<a href="#skills">Skills</a>
 			<a href="#portfolio">Portfolio</a>
-			<a href="blog.html">Blog</a>
+			<?php
+				if (isset($_SESSION['id'])){
+					echo '<a href="blogform.php">Blog</a>';
+				}else{
+					echo '<a href="viewblog.php">Blog</a>';
+				}
+			?>
 			<?php
 				if (isset($_SESSION['id'])){
 					echo '<a href="logout.php">Logout</a>';

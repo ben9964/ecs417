@@ -1,0 +1,27 @@
+div.blogposts{
+    margin-left: 35%;
+    margin-right: 35%;
+    margin-top: 10%;
+}
+
+article.post{
+    background-color: cornflowerblue;
+    color:rgb(0, 0, 0);
+    border-radius: 1.5em;
+}
+
+article.post h1{
+    font-weight: bold;
+    font-size: 2em;
+    padding-bottom: 2%;
+}
+
+article.post p.body{
+    font-size: 1.2em;
+    padding-bottom: 3%;
+}
+
+article.post p.date{
+    font-weight: bold;
+    font-size: 1em;
+}

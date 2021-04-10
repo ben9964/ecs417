@@ -27,13 +27,19 @@
 			</header>
 		
 			<nav>
-				<a href="home.html#about">About myself</a>
-				<a href="home.html#experience">Experience</a>
-				<a href="home.html#education">Education</a>
-				<a href="home.html#skills">Skills</a>
-				<a href="home.html#portfolio">Portfolio</a>
-				<a href="blog.html">Blog</a>
-				<a href="login.html">Login</a>
+				<a href="home.php#about">About myself</a>
+				<a href="home.php#experience">Experience</a>
+				<a href="home.php#education">Education</a>
+				<a href="home.php#skills">Skills</a>
+				<a href="home.php#portfolio">Portfolio</a>
+				<a href="viewblog.php">View Blog</a>
+				<?php
+					if (isset($_SESSION['id'])){
+						echo '<a href="logout.php">Logout</a>';
+					}else{
+						echo '<a href="login.php">Login</a>';
+					}
+				?>
 			</nav>
 		</div>
 		<form name="blog" method="POST" action="addpost.php" onsubmit="return preventDefault()">
