@@ -26,9 +26,9 @@
 
         if ($result->num_rows > 0){
             $_SESSION['user'] = $user;
-            echo "hi"
+            echo "hi";
         }else {
-            echo "invalid login"
+            echo "invalid login";
         }
         $conn->close();
     }
