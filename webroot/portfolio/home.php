@@ -2,8 +2,8 @@
     session_start();
 	
 	
-	if (isset($_SESSION['user_id'])){
-		echo logged in;
+	if (isset($_SESSION['id'])){
+		echo "logged in";
 	}
 ?>
 
@@ -35,7 +35,7 @@
 			<a href="#portfolio">Portfolio</a>
 			<a href="blog.html">Blog</a>
 			<?php
-				if (isset($_SESSION['user_id'])){
+				if (isset($_SESSION['id'])){
 					echo <a href="logout.php">Logout</a>;
 				}else{
 					echo <a href="login.php">Login</a>;

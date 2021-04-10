@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    if (isset($_SESSION['user_id'])){
+    if (isset($_SESSION['id'])){
         header("Location:home.php");
     }
     if ($_SERVER['REQUEST_METHOD'] == 'GET'){
@@ -23,10 +23,11 @@
     
         $sql = "SELECT * FROM USERS WHERE email = '$user' AND password = '$password'";
         $result = $conn->query($sql);
-        $userid = $result->fetch_object();
+        $row = mysqli_fetch_array($result);
 
-        if ($result->num_rows > 0){
-            $_SESSION['user_id'] = $user->ID;
+        if (is_array($row)){
+            $_SESSION["id"] = $row['ID'];
+            $_SESSION["email"] = $row['email'];
             echo $user;
         }else {
             echo "invalid login";
