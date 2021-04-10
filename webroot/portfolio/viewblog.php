@@ -61,13 +61,37 @@
                 $sql = "SELECT * FROM BLOGPOSTS";
                 $result = $conn->query($sql);
 
-                while($row = mysqli_fetch_array($result))
-                {
-                    echo '<article class="post">
-                            <h1>'. $row['title'] .'</h1>
-                            <p class="body">'. $row['body'] .'</p>
-                            <p class="date">'. $row['date'] .'</p>
-                          </article>';
+                // initialize current timestamp to 0;
+                $currentTimestamp = 0;
+
+                // initialize current array that will hold the result
+                $resultArr = array();
+
+                // loop through the result 
+                // (this example is for PDO, change to whatever driver you use)
+                while($row = mysqli_fetch_array($result)) {
+
+                    // save current row in a temp array
+                    $currentRow = array($row['date'], $row['title'], $row['body']);
+
+                    // check if you have new timestamp
+                    // if yes,initialize second dimension array for that TS
+                    // and save the current TS
+                    if($row['date'] != $currentTimestamp) {
+                        $currentTimestamp = $row['date'];
+                        $resultArr[$currentTimestamp] = array();
+                    }
+
+                    // add a temp row to the array
+                    $resultArr[$currentTimestamp][] = $currentRow;
+                }
+
+                foreach($resultArr as $value){
+                        echo '<article class="post">
+                                <h1>'. $value['title'] .'</h1>
+                                <p class="body">'. $value['body'] .'</p>
+                                <p class="date">'. $value['date'] .'</p>
+                            </article>';
                 }
             ?>
         </div>
