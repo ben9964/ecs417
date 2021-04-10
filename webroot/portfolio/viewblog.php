@@ -67,6 +67,8 @@
                     array_push($arr, $row);
                 }
 
+                echo $arr;
+
                 function date_compare($element1, $element2) {
                     $datetime1 = strtotime($element1['date']);
                     $datetime2 = strtotime($element2['date']);
@@ -76,7 +78,7 @@
                 // Sort the array 
                 usort($arr, 'date_compare');
 
-                echo $arr;
+                
 
                 // foreach ($arr as $key => $value){
                 //     echo '<article class="post">
