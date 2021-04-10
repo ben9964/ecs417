@@ -1,8 +1,8 @@
 <?php
     session_start();
 
-    if (isset($_SESSION['user'])){
-        header("Location:home.html");
+    if (isset($_SESSION['user_id'])){
+        header("Location:home.php");
     }
 
     $dbhost = getenv("MYSQL_SERVICE_HOST");
@@ -23,10 +23,11 @@
     if ($_SERVER['REQUEST_METHOD'] == 'GET'){
         $sql = "SELECT * FROM USERS WHERE email = '$user' AND password = '$password'";
         $result = $conn->query($sql);
+        $user = $result->fetch_object();
 
         if ($result->num_rows > 0){
-            $_SESSION['user'] = $user;
-            echo "hi";
+            $_SESSION['user_id'] = $user->ID;
+            echo $user;
         }else {
             echo "invalid login";
         }
@@ -35,3 +36,63 @@
     
     
 ?>
+
+<!DOCTYPE html>
+<!-- topic 2 excersise -->
+<html lang="en">
+	<head>
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" type="text/css" href="reset.css"/>
+		<link rel="stylesheet" type="text/css" href="login.css"/>
+		<link rel="stylesheet" type="text/css" href="global.css"/>
+        <title>Ben Masters ~ Portfolio</title>
+		<link rel="icon" href="https://i.gyazo.com/69f5cd9ae63825e2fe17dbb3671189da.png">
+    </head>
+	
+    <body cz-shortcut-listen="true">
+	
+	<div class="nav">
+		<header>
+			<h1>Ben Masters</h1>
+		</header>
+	
+		<nav>
+			<a href="home.html#about">About myself</a>
+			<a href="home.html#experience">Experience</a>
+			<a href="home.html#education">Education</a>
+			<a href="home.html#skills">Skills</a>
+			<a href="home.html#portfolio">Portfolio</a>
+			<a href="blog.html">Blog</a>
+			<a href="login.html">Login</a>
+		</nav>
+	</div>
+	<form action="login.php" method="GET" id="login">
+			<fieldset>
+				<h2>User Login</h2>
+				<figure>
+					<img src="loginico.jpg" class="login" width="200" height="200">
+				</figure>
+				
+				<article class="credentials">
+					<section class="email">
+						<label for="email"><b>Email</b></label><br>
+						<input type="email" placeholder="Type Your Email" name="email" id="email" required>
+					</section>
+
+					<section class="password">
+						<label for="pass"><b>Password</b></label><br>
+						<input type="password" placeholder="Enter Your Password" name="pass" id="pass" required pattern="(?=.*\d)(?=.*[a-z]).{6,}" title="You must have at least 6 characters and at least 1 number in your password!">
+					</section>
+				</article>
+
+				<input type="submit" value="Login">
+			</fieldset>
+	</form>
+	<footer>
+		<p>Go to <a href="#top">top</a></p>
+		<p id="italic">Contact Me: 64bmasters@gmail.com</p>
+	</footer>
+	
+	</body>
+</html>

@@ -25,7 +25,7 @@
 			<a href="#skills">Skills</a>
 			<a href="#portfolio">Portfolio</a>
 			<a href="blog.html">Blog</a>
-			<a href="login.html">Login</a>
+			<a href="login.php">Login</a>
 		</nav>
 	</div>
 	

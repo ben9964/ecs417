@@ -13,6 +13,16 @@
     </head>
 	
     <body cz-shortcut-listen="true">
+
+		<?php
+			session_start();
+
+			if (isset($_SESSION['user_id'])){
+				header("Location:home.html");
+			}else{
+				header("Location:login.html");
+			}
+		?>
 	
 		<div class="nav">
 			<header>
@@ -81,6 +91,6 @@
 			<p>Go to <a href="#top">top</a></p>
 			<p id="italic">Contact Me: 64bmasters@gmail.com</p>
 		</footer>
-	
 	</body>
 </html>
+
