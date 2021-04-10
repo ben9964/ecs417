@@ -88,9 +88,9 @@
 
                 foreach($resultArr as $value){
                         echo '<article class="post">
-                                <h1>'. $value['title'] .'</h1>
-                                <p class="body">'. $value['body'] .'</p>
-                                <p class="date">'. $value['date'] .'</p>
+                                <h1>'. $value[1] .'</h1>
+                                <p class="body">'. $value[2] .'</p>
+                                <p class="date">'. $value[0] .'</p>
                             </article>';
                 }
             ?>
