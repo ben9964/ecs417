@@ -4,26 +4,26 @@
     if (isset($_SESSION['user_id'])){
         header("Location:home.php");
     }
-
-    $dbhost = getenv("MYSQL_SERVICE_HOST");
-    $dbport = getenv("MYSQL_SERVICE_PORT");
-    $dbuser = getenv("DATABASE_USER");
-    $dbpwd = getenv("DATABASE_PASSWORD");
-    $dbname = getenv("DATABASE_NAME");
-    // Creates connection
-    $conn = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
-    // Checks connection
-    if ($conn->connect_error) {
-     die("Connection failed: " . $conn->connect_error);
-    }
-
-    $user = $_GET["email"];
-    $password = $_GET["pass"];
-    
     if ($_SERVER['REQUEST_METHOD'] == 'GET'){
+        $dbhost = getenv("MYSQL_SERVICE_HOST");
+        $dbport = getenv("MYSQL_SERVICE_PORT");
+        $dbuser = getenv("DATABASE_USER");
+        $dbpwd = getenv("DATABASE_PASSWORD");
+        $dbname = getenv("DATABASE_NAME");
+        // Creates connection
+        $conn = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
+        // Checks connection
+        if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+        }
+
+        $user = $_GET["email"];
+        $password = $_GET["pass"];
+    
+    
         $sql = "SELECT * FROM USERS WHERE email = '$user' AND password = '$password'";
         $result = $conn->query($sql);
-        $user = $result->fetch_object();
+        $userid = $result->fetch_object();
 
         if ($result->num_rows > 0){
             $_SESSION['user_id'] = $user->ID;
@@ -58,13 +58,13 @@
 		</header>
 	
 		<nav>
-			<a href="home.html#about">About myself</a>
-			<a href="home.html#experience">Experience</a>
-			<a href="home.html#education">Education</a>
-			<a href="home.html#skills">Skills</a>
-			<a href="home.html#portfolio">Portfolio</a>
+			<a href="home.php#about">About myself</a>
+			<a href="home.php#experience">Experience</a>
+			<a href="home.php#education">Education</a>
+			<a href="home.php#skills">Skills</a>
+			<a href="home.php#portfolio">Portfolio</a>
 			<a href="blog.html">Blog</a>
-			<a href="login.html">Login</a>
+			<a href="login.php">Login</a>
 		</nav>
 	</div>
 	<form action="login.php" method="GET" id="login">

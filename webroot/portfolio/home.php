@@ -1,3 +1,12 @@
+<?php
+    session_start();
+	
+	
+	if (isset($_SESSION['user_id'])){
+		echo logged in;
+	}
+?>
+
 <!DOCTYPE html>
 <!-- topic 2 excersise -->
 <html lang="en">
@@ -25,7 +34,13 @@
 			<a href="#skills">Skills</a>
 			<a href="#portfolio">Portfolio</a>
 			<a href="blog.html">Blog</a>
-			<a href="login.php">Login</a>
+			<?php
+				if (isset($_SESSION['user_id'])){
+					echo <a href="logout.php">Logout</a>;
+				}else{
+					echo <a href="login.php">Login</a>;
+				}
+			?>
 		</nav>
 	</div>
 	
