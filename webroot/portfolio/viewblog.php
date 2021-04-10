@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <!-- topic 2 excersise -->
 <html lang="en">
@@ -56,7 +60,6 @@
 
                 $sql = "SELECT * FROM BLOGPOSTS";
                 $result = $conn->query($sql);
-                $row = mysqli_fetch_array($result);
 
                 while($row = mysqli_fetch_array($result))
                 {
@@ -64,7 +67,7 @@
                             <h1>'. $row['title'] .'</h1>
                             <p class="body">'. $row['body'] .'</p>
                             <p class="date">'. $row['date'] .'</p>
-                          </article';
+                          </article>';
                 }
             ?>
         </div>

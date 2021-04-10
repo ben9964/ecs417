@@ -25,3 +25,17 @@ article.post p.date{
     font-weight: bold;
     font-size: 1em;
 }
+
+footer{
+    width: 100%;
+}
+
+footer a{
+	font-weight: bold;
+	color: #ccff66;
+	font-size: 1.6em;
+}
+
+footer a:hover{
+	color: red;
+}
