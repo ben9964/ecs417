@@ -4,7 +4,8 @@
     if (isset($_SESSION['id'])){
         header("Location:home.php");
     }
-    if ($_SERVER['REQUEST_METHOD'] == 'GET'){
+
+    if ($_SERVER['REQUEST_METHOD'] == 'GET' && count($_GET) > 0){
         $dbhost = getenv("MYSQL_SERVICE_HOST");
         $dbport = getenv("MYSQL_SERVICE_PORT");
         $dbuser = getenv("DATABASE_USER");
@@ -14,12 +15,11 @@
         $conn = new mysqli($dbhost, $dbuser, $dbpwd, $dbname);
         // Checks connection
         if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
+            die("Connection failed: " . $conn->connect_error);
         }
 
         $user = $_GET["email"];
         $password = $_GET["pass"];
-    
     
         $sql = "SELECT * FROM USERS WHERE email = '$user' AND password = '$password'";
         $result = $conn->query($sql);
@@ -28,7 +28,7 @@
         if (is_array($row)){
             $_SESSION["id"] = $row['ID'];
             $_SESSION["email"] = $row['email'];
-            echo $user;
+            header("Location:blogform.php");
         }else {
             echo "invalid login";
         }

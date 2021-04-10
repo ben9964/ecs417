@@ -1,3 +1,11 @@
+<?php
+	session_start();
+
+	if (!isset($_SESSION['id'])){
+		header("Location:login.php");
+	}
+?>
+
 <!DOCTYPE html>
 <!-- topic 2 excersise -->
 <html lang="en">
@@ -13,17 +21,6 @@
     </head>
 	
     <body cz-shortcut-listen="true">
-
-		<?php
-			session_start();
-
-			if (isset($_SESSION['user_id'])){
-				header("Location:home.html");
-			}else{
-				header("Location:login.html");
-			}
-		?>
-	
 		<div class="nav">
 			<header>
 				<h1>Ben Masters</h1>
@@ -39,7 +36,7 @@
 				<a href="login.html">Login</a>
 			</nav>
 		</div>
-		<form name="blog" method="POST" action="" onsubmit="return preventDefault()">
+		<form name="blog" method="POST" action="addpost.php" onsubmit="return preventDefault()">
 			<fieldset>
 				<legend>New Blog Post</legend>
 				<article>
@@ -71,7 +68,7 @@
 					</p>
 					<p>
 						<label>Date</label> <br>
-						<input type="date">
+						<input name="date" type="date" required>
 					</p>
 				</article>
 				<article class="white">
