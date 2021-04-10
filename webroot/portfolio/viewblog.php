@@ -60,39 +60,38 @@
 
                 $sql = "SELECT * FROM BLOGPOSTS";
                 $result = $conn->query($sql);
+                
+                $arr = array();
 
-                // initialize current timestamp to 0;
-                $currentTimestamp = 0;
-
-                // initialize current array that will hold the result
-                $resultArr = array();
-
-                // loop through the result 
-                // (this example is for PDO, change to whatever driver you use)
-                while($row = mysqli_fetch_array($result)) {
-
-                    // save current row in a temp array
-                    $currentRow = array($row['date'], $row['title'], $row['body']);
-
-                    // check if you have new timestamp
-                    // if yes,initialize second dimension array for that TS
-                    // and save the current TS
-                    if($row['date'] != $currentTimestamp) {
-                        $currentTimestamp = $row['date'];
-                        $resultArr[$currentTimestamp] = array();
-                    }
-
-                    // add a temp row to the array
-                    $resultArr[$currentTimestamp][] = $currentRow;
+                while ($row = mysqli_fetch_array($result)){
+                    array_push($arr, $row);
                 }
 
-                foreach($resultArr as $value){
-                        echo '<article class="post">
-                                <h1>'. $value[1] .'</h1>
-                                <p class="body">'. $value[2] .'</p>
-                                <p class="date">'. $value[0] .'</p>
-                            </article>';
+                function date_compare($element1, $element2) {
+                    $datetime1 = strtotime($element1['date']);
+                    $datetime2 = strtotime($element2['date']);
+                    return $datetime1 - $datetime2;
+                } 
+                  
+                // Sort the array 
+                usort($arr, 'date_compare');
+
+                foreach ($arr as $key => $value){
+                    echo '<article class="post">
+                            <h1>'. $arr['title'] .'</h1>
+                            <p class="body">'. $arr['body'] .'</p>
+                            <p class="date">'. $arr['date'] .'</p>
+                          </article>';
                 }
+
+                // while($row = mysqli_fetch_array($result))
+                // {
+                //     echo '<article class="post">
+                //             <h1>'. $row['title'] .'</h1>
+                //             <p class="body">'. $row['body'] .'</p>
+                //             <p class="date">'. $row['date'] .'</p>
+                //           </article>';
+                // }
             ?>
         </div>
 
