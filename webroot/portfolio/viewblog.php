@@ -76,13 +76,15 @@
                 // Sort the array 
                 usort($arr, 'date_compare');
 
-                foreach ($arr as $key => $value){
-                    echo '<article class="post">
-                            <h1>'. $arr['title'] .'</h1>
-                            <p class="body">'. $arr['body'] .'</p>
-                            <p class="date">'. $arr['date'] .'</p>
-                          </article>';
-                }
+                echo $arr;
+
+                // foreach ($arr as $key => $value){
+                //     echo '<article class="post">
+                //             <h1>'. $arr['title'] .'</h1>
+                //             <p class="body">'. $arr['body'] .'</p>
+                //             <p class="date">'. $arr['date'] .'</p>
+                //           </article>';
+                // }
 
                 // while($row = mysqli_fetch_array($result))
                 // {
