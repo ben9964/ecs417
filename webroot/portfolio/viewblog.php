@@ -63,15 +63,33 @@
                 
                 $arr = mysqli_fetch_all($result);
 
-                // while ($row = mysqli_fetch_array($result)){
-                //     array_push($arr, $row);
-                // }
+                //print_r($arr);
 
-                print_r($arr);
+                // Array ( [0] => Array ( [0] => 1 
+                //                         [1] => 2021-04-13 00:00:00 
+                //                         [2] => TEST TITLE 
+                //                         [3] => BLOG POST HERE TYPING LOTS OF TYPING ) 
+                //         [1] => Array ( [0] => 2 
+                //                         [1] => 2021-04-22 00:00:00 
+                //                         [2] => BLOGGG 
+                //                         [3] => SECOND POST OF THE DAY WHATS UP GAMERS ) 
+                //         [2] => Array ( [0] => 3 
+                //                         [1] => 2021-03-30 00:00:00 
+                //                         [2] => THIRD POST 
+                //                         [3] => TESTING TESTING GAMERS ) 
+                //         [3] => Array ( [0] => 4 
+                //                         [1] => 2021-04-28 00:00:00 
+                //                         [2] => FOURTH POST 
+                //                         [3] => fourth post here hey whats up ) 
+                //         [4] => Array ( [0] => 5 
+                //                         [1] => 2021-04-10 15:44:59 
+                //                         [2] => FINAL POST!?! 
+                //                         [3] => IM QUITTING ITS APRIL FOOLS JOKes ) 
+                //     )
 
                 function date_compare($element1, $element2) {
-                    $datetime1 = strtotime($element1['date']);
-                    $datetime2 = strtotime($element2['date']);
+                    $datetime1 = strtotime($element1[1]);
+                    $datetime2 = strtotime($element2[1]);
                     return $datetime1 - $datetime2;
                 } 
                   
@@ -80,13 +98,13 @@
 
                 
 
-                // foreach ($arr as $key => $value){
-                //     echo '<article class="post">
-                //             <h1>'. $arr['title'] .'</h1>
-                //             <p class="body">'. $arr['body'] .'</p>
-                //             <p class="date">'. $arr['date'] .'</p>
-                //           </article>';
-                // }
+                foreach ($arr as $key => $value){
+                    echo '<article class="post">
+                            <h1>'. $arr[$key][2] .'</h1>
+                            <p class="body">'. $arr[$key][3] .'</p>
+                            <p class="date">'. $arr[$key][1] .'</p>
+                          </article>';
+                }
 
                 // while($row = mysqli_fetch_array($result))
                 // {
