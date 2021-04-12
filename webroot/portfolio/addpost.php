@@ -1,8 +1,8 @@
 <?php
     session_start();
     if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-        $posttitle = $_POST['title'];
-        $blogpost = $_POST['blogpost'];
+        $_SESSION['title'] = $_POST['title'];
+        $_SESSION['blogpost'] = $_POST['blogpost'];
     }
 
     if (isset($_POST['confirm'])){
@@ -20,8 +20,8 @@
             }
     
             $date = date("Y-m-d H:i:s");
-            $title = mysqli_real_escape_string($conn, $_POST["title"]);
-            $body = mysqli_real_escape_string($conn, $_POST["blogpost"]);
+            $title = mysqli_real_escape_string($conn,  $_SESSION['title']);
+            $body = mysqli_real_escape_string($conn, $_SESSION['blogpost']);
         
             $sql = "INSERT INTO BLOGPOSTS (date, title, body) VALUES ('$date', '$title', '$body')";
             $result = $conn->query($sql);
@@ -31,6 +31,9 @@
                 echo "Error: " . $sql . "<br>" . $conn->error;
             }
             $conn->close();
+
+            unset($_SESSION['title']);
+            unset($_SESSION['blogpost']);
         }
     }
 ?>
