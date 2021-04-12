@@ -1,8 +1,9 @@
 <?php
     session_start();
-    if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+    if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_SESSION['title']) && !isset($_SESSION['blogpost'])){
         $_SESSION['title'] = $_POST['title'];
         $_SESSION['blogpost'] = $_POST['blogpost'];
+
     }
 
     if (isset($_POST['confirm'])){
