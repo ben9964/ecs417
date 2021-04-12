@@ -125,7 +125,9 @@
                     } 
                       
                     usort($arr, 'date_compare');
-    
+                    $arr = array_reverse($arr);
+
+
                     foreach ($arr as $key => $value){
                         echo '<article class="post">
                                 <h1>'. $arr[$key][2] .'</h1>

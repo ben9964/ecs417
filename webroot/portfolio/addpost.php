@@ -141,6 +141,7 @@
                     } 
                         
                     usort($arr, 'date_compare');
+                    $arr = array_reverse($arr);
 
                     
                     foreach ($arr as $key => $value){
