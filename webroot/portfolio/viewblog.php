@@ -1,5 +1,9 @@
 <?php
     session_start();
+
+    if ($_SERVER['REQUEST_METHOD'] == 'GET' && count($_GET) > 0){
+        $_SESSION['month'] = $_GET['month'];
+    }
 ?>
 
 <!DOCTYPE html>
@@ -44,6 +48,27 @@
                 ?>
 			</nav>
 		</div>
+        <div class="monthSelect">
+            <form method="GET" action="viewblog.php">
+                <label>Month Selector</label><br>
+                <select name="month">
+                    <option>none</option>
+                    <option>January</option>
+                    <option>February</option>
+                    <option>March</option>
+                    <option>April</option>
+                    <option>May</option>
+                    <option>June</option>
+                    <option>July</option>
+                    <option>August</option>
+                    <option>September</option>
+                    <option>October</option>
+                    <option>November</option>
+                    <option>December</option>
+                </select>
+                <input type="submit" value="Filter" class="button">
+            </form>
+        </div>
         <div class="blogposts">
             <?php
                 $dbhost = getenv("MYSQL_SERVICE_HOST");
@@ -58,7 +83,14 @@
                     die("Connection failed: " . $conn->connect_error);
                 }
 
-                $sql = "SELECT * FROM BLOGPOSTS";
+                if (isset($_SESSION['month'])){
+                    $month = date("n", strtotime($_SESSION['month']))
+                    $sql = "SELECT * FROM BLOGPOSTS WHERE MONTH(date) = $month"
+                }else{
+                    $sql = "SELECT * FROM BLOGPOSTS";
+                }
+
+                
                 $result = $conn->query($sql);
                 
                 $arr = mysqli_fetch_all($result);
@@ -85,20 +117,26 @@
                 //                         [3] => IM QUITTING ITS APRIL FOOLS JOKes ) 
                 //     )
 
-                function date_compare($element1, $element2) {
-                    $datetime1 = strtotime($element1[1]);
-                    $datetime2 = strtotime($element2[1]);
-                    return $datetime1 - $datetime2;
-                } 
-                  
-                usort($arr, 'date_compare');
-
-                foreach ($arr as $key => $value){
+                if (!empty($arr)){
+                    function date_compare($element1, $element2) {
+                        $datetime1 = strtotime($element1[1]);
+                        $datetime2 = strtotime($element2[1]);
+                        return $datetime1 - $datetime2;
+                    } 
+                      
+                    usort($arr, 'date_compare');
+    
+                    foreach ($arr as $key => $value){
+                        echo '<article class="post">
+                                <h1>'. $arr[$key][2] .'</h1>
+                                <p class="body">'. $arr[$key][3] .'</p>
+                                <p class="date">'. $arr[$key][1] .'</p>
+                              </article>';
+                    }
+                }else{
                     echo '<article class="post">
-                            <h1>'. $arr[$key][2] .'</h1>
-                            <p class="body">'. $arr[$key][3] .'</p>
-                            <p class="date">'. $arr[$key][1] .'</p>
-                          </article>';
+                                <h1> No Blog Posts Found!</h1>
+                            </article>';
                 }
             ?>
         </div>
