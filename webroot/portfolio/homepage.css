@@ -1,6 +1,7 @@
 html{
 	scroll-behavior: smooth;
 	scroll-padding: 15em;
+	color:black;
 }
 
 div.nav{
