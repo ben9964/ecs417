@@ -83,9 +83,9 @@
                     die("Connection failed: " . $conn->connect_error);
                 }
 
-                if (isset($_SESSION['month'])){
-                    $month = date("n", strtotime($_SESSION['month']))
-                    $sql = "SELECT * FROM BLOGPOSTS WHERE MONTH(date) = $month"
+                if (isset($_SESSION['month']) && $_SESSION['month'] != "none"){
+                    $month = date("n", strtotime($_SESSION['month']));
+                    $sql = "SELECT * FROM BLOGPOSTS WHERE MONTH(date) = $month";
                 }else{
                     $sql = "SELECT * FROM BLOGPOSTS";
                 }
