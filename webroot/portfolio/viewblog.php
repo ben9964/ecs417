@@ -63,8 +63,6 @@
                 
                 $arr = mysqli_fetch_all($result);
 
-                //print_r($arr);
-
                 // Array ( [0] => Array ( [0] => 1 
                 //                         [1] => 2021-04-13 00:00:00 
                 //                         [2] => TEST TITLE 
@@ -93,10 +91,7 @@
                     return $datetime1 - $datetime2;
                 } 
                   
-                // Sort the array 
                 usort($arr, 'date_compare');
-
-                
 
                 foreach ($arr as $key => $value){
                     echo '<article class="post">
@@ -105,15 +100,6 @@
                             <p class="date">'. $arr[$key][1] .'</p>
                           </article>';
                 }
-
-                // while($row = mysqli_fetch_array($result))
-                // {
-                //     echo '<article class="post">
-                //             <h1>'. $row['title'] .'</h1>
-                //             <p class="body">'. $row['body'] .'</p>
-                //             <p class="date">'. $row['date'] .'</p>
-                //           </article>';
-                // }
             ?>
         </div>
 

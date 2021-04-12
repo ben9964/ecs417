@@ -15,8 +15,8 @@
         }
 
         $date = date("Y-m-d H:i:s");
-        $title = $_POST["title"];
-        $body = $_POST["blogpost"];
+        $title = real_escape_string($_POST["title"]);
+        $body = real_escape_string($_POST["blogpost"]);
     
         $sql = "INSERT INTO BLOGPOSTS (date, title, body) VALUES ('$date', '$title', '$body')";
         $result = $conn->query($sql);
