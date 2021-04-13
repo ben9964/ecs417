@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <?php
     session_start();
     if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_SESSION['title']) && !isset($_SESSION['blogpost'])){
@@ -39,7 +40,6 @@
     }
 ?>
 
-<!DOCTYPE html>
 <!-- topic 2 excersise -->
 <html lang="en">
 	<head>

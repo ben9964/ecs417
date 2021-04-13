@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <?php
     session_start();
 
@@ -38,7 +39,6 @@
     
 ?>
 
-<!DOCTYPE html>
 <!-- topic 2 excersise -->
 <html lang="en">
 	<head>
